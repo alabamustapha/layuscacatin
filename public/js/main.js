@@ -28,9 +28,10 @@ $(document).ready(function(){
 	
 	//code for the background slider
 	$.backstretch([
-      "img/bg_img.jpg",
-      "img/bg_img2.jpg",
-      "img/bg_img3.jpg"
+      "img/bg_cacatin_1.jpg",
+      "img/bg_cacatin_2.jpg",
+      "img/bg_cacatin_5.jpg",
+      "img/bg_cacatin_4.jpg"
     ], {
         fade: 750,
         duration: 2500
