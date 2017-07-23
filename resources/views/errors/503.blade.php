@@ -1,47 +1,42 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Be right back.</title>
+<html lang="en">
+<head>
+    <title>Layus Cacatin - Under Construction</title>
+    <meta charset="utf-8">
+    <meta name="author" content="redehub.com.ng">
+    <meta name="description" content="Layus Cacatin"/>
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 
-        <style>
-            html, body {
-                height: 100%;
-            }
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/TimeCircles.js"></script>
+    <script type="text/javascript" src="js/backstretch.js"></script>
+    <script type="text/javascript" src="js/ajaxchimp.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
 
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                color: #B0BEC5;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato', sans-serif;
-            }
+    <section class="content wrapper">
 
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
+        <h1>Site Coming soon</h1>
+        <p class="description">Layus Investment Company limited was established and incorporated in 1997 as the manufacturer of pharmaceutical products as core producer of household products with trade name “CACATIN” .The business has the potential to grow and compete favourably with multinational companies of today.</p>
 
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
+        <p>ADDRESS: CA 24 FEDERAL LOW COST HOUSING ESTATE, MOSAN, IPAJA<br>
+        PHONE NO: 08023157695, 08050212528</p>
 
-            .title {
-                font-size: 72px;
-                margin-bottom: 40px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Be right back.</div>
+        <div class="subscription_form clearfix">
+            <div>
+                <form action="http://pixelhint.us3.list-manage.com/subscribe/post?u=9cf3b8b1cfc597a436b9964d3&amp;id=2449ed590e" method="post" id="sub_form">
+                    <input type="email" id="mc-email" placeholder="enter your email">
+                    <button type="submit" id="mc_submit"><i class="icon"></i></button>
+                </form>
             </div>
         </div>
-    </body>
+
+        <div class="counter clear" data-date="2017-08-07 00:00:00"></div>
+
+    </section>
+    
+</body>
 </html>

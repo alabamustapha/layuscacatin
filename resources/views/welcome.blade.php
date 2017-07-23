@@ -1,87 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <title>Layus Cacatin - Under Construction</title>
+    <meta charset="utf-8">
+    <meta name="author" content="redehub.com.ng">
+    <meta name="description" content="Layus Cacatin"/>
 
-        <title>Layus Cacatin</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/TimeCircles.js"></script>
+    <script type="text/javascript" src="js/backstretch.js"></script>
+    <script type="text/javascript" src="js/ajaxchimp.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
+    <section class="content wrapper">
 
-            .full-height {
-                height: 100vh;
-            }
+        <h1>Site Coming soon</h1>
+        <p class="description">Layus Investment Company limited was established and incorporated in 1997 as the manufacturer of pharmaceutical products as core producer of household products with trade name “CACATIN” .The business has the potential to grow and compete favourably with multinational companies of today.</p>
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+        <p>ADDRESS: CA 24 FEDERAL LOW COST HOUSING ESTATE, MOSAN, IPAJA<br>
+        PHONE NO: 08023157695, 08050212528</p>
 
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Layus Cacatin
-                </div>
+        <div class="subscription_form clearfix">
+            <div>
+                <form action="http://pixelhint.us3.list-manage.com/subscribe/post?u=9cf3b8b1cfc597a436b9964d3&amp;id=2449ed590e" method="post" id="sub_form">
+                    <input type="email" id="mc-email" placeholder="enter your email">
+                    <button type="submit" id="mc_submit"><i class="icon"></i></button>
+                </form>
             </div>
         </div>
-    </body>
+
+        <div class="counter clear" data-date="2017-08-07 00:00:00"></div>
+
+    </section>
+    
+</body>
 </html>
