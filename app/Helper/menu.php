@@ -8,3 +8,13 @@ function isActiveRoute($routeName){
 function activeRoute($routeName){
 	return isActiveRoute($routeName) ? "active" : "";
 }
+
+function linkToRoute($routeName){
+	$link = "";
+	if(isActiveRoute($routeName)){
+		$link = "#";
+	}else{
+		$link = $routeName == "home" ? '/' : url($routeName);
+	}
+	return  $link;
+}

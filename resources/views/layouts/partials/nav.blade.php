@@ -25,7 +25,7 @@
 
                 <ul class="nav navbar-nav navbar-right">
                     <li class="{{ activeRoute('home') }}">
-                        <a>Home</a>
+                        <a href="{{ linkToRoute('home') }}">Home</a>
                     </li>
                     <li class="">
                         <a>About</a>
@@ -57,14 +57,14 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="">
-                        <a>Distributors</a>
+                    <li class="{{ activeRoute('distributors') }}">
+                        <a href="{{ linkToRoute('distributors') }}">Distributors</a>
                     </li>
                     <li class="">
                         <a>Blog</a>
                     </li>
-                    <li class="{{ activeRoute('contact_us') }}">
-                        <a>Contact</a>
+                    <li class="{{ activeRoute('contact-us') }}">
+                        <a href="{{ linkToRoute('contact-us') }}">Contact</a>
                     </li>
                     @if (Auth::guest())
                     <li>
