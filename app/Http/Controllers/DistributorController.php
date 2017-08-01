@@ -15,7 +15,7 @@ class DistributorController extends Controller
 
 	public function index(){
 
-		$distributors = Distributor::all()->paginate(15);
+		$distributors = Distributor::paginate(15);
 		return view('distributors.index', compact("distributors"));
 	}
 }
