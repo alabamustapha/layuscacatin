@@ -48,8 +48,7 @@
 
         <header>
 
-            <!-- *** TOP ***
-_________________________________________________________ -->
+            <!-- *** TOP ***  -->
             <div id="top">
                 <div class="container">
                     <div class="row">
@@ -81,8 +80,7 @@ _________________________________________________________ -->
 
             <!-- *** TOP END *** -->
 
-            <!-- *** NAVBAR ***
-    _________________________________________________________ -->
+            <!-- *** NAVBAR *** -->
 
             <div class="navbar-affixed-top" data-spy="affix" data-offset-top="200">
 
@@ -188,8 +186,7 @@ _________________________________________________________ -->
 
         </header>
 
-        <!-- *** LOGIN MODAL ***
-_________________________________________________________ -->
+        <!-- *** LOGIN MODAL *** -->
 
         <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
             <div class="modal-dialog modal-sm">
@@ -225,8 +222,7 @@ _________________________________________________________ -->
         <!-- *** LOGIN MODAL END *** -->
 
         <section>
-            <!-- *** HOMEPAGE CAROUSEL ***
- _________________________________________________________ -->
+            <!-- *** HOMEPAGE CAROUSEL *** -->
 
             <div class="home-carousel">
 
