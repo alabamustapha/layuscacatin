@@ -46,38 +46,46 @@
 
                             <div class="heading">
                                 <h3>Contact form</h3>
+                                @if(session('message'))
+                                    <div class="alert alert-success alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                            </button>
+                            {{ session('message') }}
+                        </div>
+                                @endif
                             </div>
 
-                            <form>
+                            <form action="{{ url("contact-us") }}" method="post">
+                            {{ csrf_field() }}
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <label for="firstname">Name</label>
-                                            <input type="text" class="form-control" id="firstname" placeholder="what can we call you?">
+                                            <label for="name">Name *</label>
+                                            <input type="text" class="form-control" id="name" placeholder="what can we call you?" name="name" required>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <label for="lastname">Phone Number</label>
-                                            <input type="tel" class="form-control" id="phone" placeholder="a phone number we can call">
+                                            <label for="phone">Phone Number</label>
+                                            <input type="tel" class="form-control" id="phone" placeholder="a phone number we can call" name="phone">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <label for="email">Email</label>
-                                            <input type="text" class="form-control" id="email" placeholder="your email address">
+                                            <label for="email">Email *</label>
+                                            <input type="text" class="form-control" id="email" placeholder="your email address" name="email" required>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <label for="subject">Subject</label>
-                                            <input type="text" class="form-control" id="subject" placeholder="subject">
+                                            <label for="subject">Subject *</label>
+                                            <input type="text" class="form-control" id="subject" placeholder="subject" name="subject" required>
                                         </div>
                                     </div>
                                     <div class="col-sm-12">
                                         <div class="form-group">
-                                            <label for="message">Message</label>
-                                            <textarea id="message" class="form-control" placeholder="write to us"></textarea>
+                                            <label for="message">Message *</label>
+                                            <textarea id="message" class="form-control" placeholder="write to us" name="message" required></textarea>
                                         </div>
                                     </div>
 

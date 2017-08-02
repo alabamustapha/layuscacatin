@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Mail\ContactUs;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -19,5 +21,14 @@ class HomeController extends Controller
 
     public function contactPage(){
     	return view('contact');
+    }
+
+    public function sendContactMail(Request $request){
+
+            Mail::to("layuscacatin1997@gmail.com")
+            ->send(new ContactUs($request));
+
+            return back()->with('message', "Message sent, thank you for contacting us");
+            
     }
 }

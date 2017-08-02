@@ -15,4 +15,5 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/contact-us', 'HomeController@contactPage')->name('contact-us');
+Route::post('/contact-us', 'HomeController@sendContactMail')->name('contact-us-mail');
 Route::get('/distributors', 'DistributorController@index')->name('distributors');
