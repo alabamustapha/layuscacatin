@@ -27,8 +27,8 @@
                     <li class="{{ activeRoute('home') }}">
                         <a href="{{ linkToRoute('home') }}">Home</a>
                     </li>
-                    <li class="">
-                        <a>About</a>
+                    <li class="{{ activeRoute('about-us') }}">
+                        <a href="{{ linkToRoute('about-us') }}">About</a>
                     </li>
                     <li class="dropdown use-yamm yamm-fw">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
@@ -42,13 +42,14 @@
                                         <div class="col-sm-3">
                                             <h5>Categories</h5>
                                             <ul>
-                                                <li><a href="#">Herbal Mixture</a>
+                                                <li><a href="{{ url('products') }}">All</a>
+                                                <li><a href="{{ url('products?cat=herbal-mixture') }}">Herbal Mixture</a>
                                                 </li>
-                                                <li><a href="#">Antiseptic</a>
+                                                <li><a href="{{ url('products?cat=antiseptic') }}">Antiseptic</a>
                                                 </li>
-                                                <li><a href="#">Hair Food</a>
+                                                <li><a href="{{ url('products?cat=hair-food') }}">Hair Food</a>
                                                 </li>
-                                                <li><a href="#">Cream</a>
+                                                <li><a href="{{ url('products?cat=cream') }}">Cream</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -77,6 +78,9 @@
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
+                            
+                            <li><a href="{{ url(Auth::user()->role) }}">Dashboard</a></li>
+
                             <li>
                                 <a href="{{ url('/logout') }}"
                                     onclick="event.preventDefault();
@@ -88,6 +92,8 @@
                                     {{ csrf_field() }}
                                 </form>
                             </li>
+
+
                         </ul>
                     </li>
                     @endif

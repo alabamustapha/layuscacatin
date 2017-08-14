@@ -1,1 +1,32 @@
 /* your styles go here */
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  min-height: 100%;
+  padding-bottom: 6rem;
+}
+
+
+div#copyright{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+footer#footer{
+	margin-bottom: -1rem;
+}
+

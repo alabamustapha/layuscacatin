@@ -1,0 +1,23 @@
+
+        <div class="panel panel-default sidebar-menu">
+
+            <div class="panel-heading">
+                <h3 class="panel-title">Admin Menu</h3>
+            </div>
+
+            <div class="panel-body">
+
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="{{ activeRoute('admin_dashboard') }}">
+                        <a href="{{ linkToRoute('admin_dashboard') }}"><i class="fa fa-list"></i> Dashboard</a>
+                    </li>
+                    <li class="{{ activeRoute('admin_distributors') }}">
+                        <a href="{{ linkToRoute('admin_distributors') }}"><i class="fa fa-users"></i> Distributors</a>
+                    </li>
+                    
+                    <li>
+                        <a href="#"><i class="fa fa-sign-out"></i> Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>

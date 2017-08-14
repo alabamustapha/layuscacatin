@@ -4,7 +4,7 @@
 
 
 
-        <div id="heading-breadcrumbs" class="no-mb">
+        <div id="heading-breadcrumbs" class="">
             <div class="container">
                 <div class="row">
                     <div class="col-md-7">
@@ -27,37 +27,54 @@
            	
            	<div class="row">
            		
+           		<div class="col-md-offset-2 col-md-8">
+           		
+                  <div class="panel panel-primary">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">List of all our accredited distributors</h3>
+                      </div>
+                        
+                      <div class="panel-body">
+                        <p>We have distributors all over Nigeria and beyond. Locate a distributor near you.</p>
 
-           		<div class="col-md-offset-3 col-md-8">
-           			<table class="table table-striped table-hover">
-           			<thead>
-           				<th>S/N</th>
-           				<th>Name</th>
-           				<th>Location</th>
-           				<th>Phone</th>
-           				<th>For Women</th>
-           			</thead>
-           			<tbody>
-           				@foreach($distributors as $distributor)
-           					<tr>
-           						<td>{{ $distributor->id }}</td>
-           						<td>{{ $distributor->name }}</td>
-           						<td>{{ $distributor->location }}</td>
-           						<td>{{ $distributor->phone }}</td>
-           						<td>{{ $distributor->for_women }}</td>	           						
-           					</tr>
-           				@endforeach
-           			</tbody>
-           			<tfoot>
-           				<th>S/N</th>
-           				<th>Name</th>
-           				<th>Location</th>
-           				<th>Phone</th>
-           				<th>For Women</th>
-           			</tfoot>
-           		</table>
 
-           		{{ $distributors->links() }}		
+                        <table class="table table-bordered table-striped table-hover">
+                          <thead>
+                            <th>S/N</th>
+                            <th>Name</th>
+                            <th>Location</th>
+                            <th>Phone</th>
+                            <th>For Women</th>
+                          </thead>
+                          <tbody>
+                            @foreach($distributors as $distributor)
+                              <tr>
+                                <td>{{ $distributor->id }}</td>
+                                <td>{{ $distributor->name }}</td>
+                                <td>{{ $distributor->location }}</td>
+                                <td>{{ $distributor->phone }}</td>
+                                <td>{{ $distributor->for_women == 1 ? "Available" : "Not Available" }}</td>                                              
+                              </tr>
+                            @endforeach
+                          </tbody>
+                          <tfoot>
+                            <th>S/N</th>
+                            <th>Name</th>
+                            <th>Location</th>
+                            <th>Phone</th>
+                            <th>For Women</th>
+                          </tfoot>
+                      </table>
+
+                      {{ $distributors->links() }}
+                      
+                      </div>
+
+                        
+                      
+                  </div>
+
+           		
            		</div>
            	</div>
            	

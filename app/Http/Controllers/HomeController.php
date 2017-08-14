@@ -31,4 +31,12 @@ class HomeController extends Controller
             return back()->with('message', "Message sent, thank you for contacting us");
             
     }
+
+    public function aboutUs(){
+        return view('about');
+    }
+
+    public function install(){
+        return view("admin.install");
+    }
 }

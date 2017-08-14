@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class storeNewDistributorRequest extends FormRequest
 {
@@ -13,7 +14,8 @@ class storeNewDistributorRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+
+        return Auth::user()->role == "admin";
     }
 
     /**

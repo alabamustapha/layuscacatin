@@ -14,6 +14,20 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/install', 'HomeController@install')->name('install');
 Route::get('/contact-us', 'HomeController@contactPage')->name('contact-us');
 Route::post('/contact-us', 'HomeController@sendContactMail')->name('contact-us-mail');
+Route::get('/about-us', 'HomeController@aboutUs')->name('about-us');
+
 Route::get('/distributors', 'DistributorController@index')->name('distributors');
+Route::post('/distributors', 'DistributorController@create')->name('add_distributor');
+Route::delete('/distributors/{id}/delete', 'DistributorController@delete')->name('delete_distributor');
+
+
+Route::group(['prefix' => 'admin', "middleware" => ["adminExist","admin"] ], function(){
+
+	Route::get('/', 'AdminController@dashboard')->name('admin_dashboard');
+	Route::get('/distributors', 'AdminController@showDistributors')->name('admin_distributors');
+
+});
+

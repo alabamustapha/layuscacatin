@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Distributor;
 
 class deleteDistributorRequest extends FormRequest
 {
@@ -13,7 +14,9 @@ class deleteDistributorRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        $distributor = Distributor::find($this->route('id'));
+
+        return $distributor && $this->user()->role == 'admin';
     }
 
     /**

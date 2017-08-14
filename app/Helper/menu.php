@@ -14,7 +14,8 @@ function linkToRoute($routeName){
 	if(isActiveRoute($routeName)){
 		$link = "#";
 	}else{
-		$link = $routeName == "home" ? '/' : url($routeName);
+		$link = $routeName == "home" ? '/' : route($routeName);
 	}
 	return  $link;
 }
+

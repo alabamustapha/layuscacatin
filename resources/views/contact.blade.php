@@ -23,11 +23,11 @@
         </div>
 
         <section>
-
-            <div id="map" class="with-border">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.315995927257!2d3.277675914326972!3d6.607600024014177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b905fc11faddf%3A0xb4bc0d12559ae4b0!2sMosan+Rd%2C+Ipaja%2C+Lagos!5e0!3m2!1sen!2sng!4v1502629442437" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <!-- <div id="map" class="with-border">
 
             </div>
-
+ -->
         </section>
 
         <div id="content">
