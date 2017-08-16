@@ -39,7 +39,7 @@
                             </div>
                             <!-- /.image -->
                             <div class="text">
-                                <h3><a href="shop-detail.html">Layus Cacatin Antiseptic Cream</a></h3>
+                                <h3><a href="#">Layus Cacatin Antiseptic Cream</a></h3>
                                 <p class="price">#3000.00</p>
                                 <p class="buttons">
                                     <a href="#" class="btn btn-default">View detail</a>
