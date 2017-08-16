@@ -1,11 +1,30 @@
-@extends('layouts.app')
+@extends('layouts.web')
 
 <!-- Main Content -->
 @section('content')
+
+ <div id="heading-breadcrumbs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <h1>Password Recovery</h1>
+                    </div>
+                    <div class="col-md-5">
+                        <ul class="breadcrumb">
+                            <li><a href="{{ url("/") }}">Home</a>
+                            </li>
+                            <li>Password Recovery</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
+            <div class="panel panel-primary">
                 <div class="panel-heading">Reset Password</div>
                 <div class="panel-body">
                     @if (session('status'))

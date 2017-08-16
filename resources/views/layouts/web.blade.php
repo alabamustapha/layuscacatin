@@ -32,12 +32,12 @@
     <link href="css/animate.css" rel="stylesheet">
 
     <!-- Theme stylesheet, if possible do not edit this stylesheet -->
-    <link href="css/style.default.css" rel="stylesheet" id="theme-stylesheet">
-    <link href="css/style.pink.css" rel="stylesheet" id="theme-stylesheet">
+    <link href="{{ asset('css/style.default.css') }}" rel="stylesheet" id="theme-stylesheet">
+    <link href="{{ asset('css/style.pink.css') }}" rel="stylesheet" id="theme-stylesheet">
 
 
     <!-- Custom stylesheet - for your changes -->
-    <link href="css/custom.css" rel="stylesheet">
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 
     <!-- Responsivity for older IE -->
     <!--[if lt IE 9]>
