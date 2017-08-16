@@ -17,7 +17,7 @@
                                 </div>
                                 <h3>About</h3>
                                 <p>Layus Investment Company limited was established and incorporated in 1997 as the manufacturer of pharmaceutical products as core producer of household products with trade name “CACATIN”</p>
-                                <p class="read-more"><a href="#" class="btn btn-template-main">Continue reading</a>
+                                <p class="read-more"><a href="{{ url('about-us') }}" class="btn btn-template-main">Continue reading</a>
                                     </p>
                             </div>
                         </div>
@@ -29,7 +29,7 @@
                                 </div>
                                 <h3>Vision</h3>
                                 <p>take over the leading market position in the segment of cosmetic care products on the Nigeria market and other markets in West African and beyond - to become the first choice of end users as well as professional users</p>
-                                <p class="read-more"><a href="#" class="btn btn-template-main">Continue reading</a>
+                                <p class="read-more"><a href="{{ url('about-us') }}" class="btn btn-template-main">Continue reading</a>
                                     </p>
                             </div>
                         </div>
@@ -41,7 +41,7 @@
                                 </div>
                                 <h3>Mission</h3>
                                 <p>We strive for a pleasant working environment and do our best to contribute to the welfare or our local, as well as, the broader community.Our socially responsible stance is reflected by our support for a number of ...</p>
-                                <p class="read-more"><a href="#" class="btn btn-template-main">Continue reading</a>
+                                <p class="read-more"><a href="{{ url('about-us') }}" class="btn btn-template-main">Continue reading</a>
                                     </p>
                             </div>
                         </div>

@@ -68,8 +68,8 @@
                         <a href="{{ linkToRoute('contact-us') }}">Contact</a>
                     </li>
                     @if (Auth::guest())
-                    <li>
-                        <a>Sign in</a>
+                    <li class="{{ activeRoute('login') }}">
+                        <a href="{{ linkToRoute('login') }}">Sign in</a>
                     </li>
                     @else
                     <li class="dropdown">

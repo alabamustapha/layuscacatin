@@ -39,4 +39,9 @@ class HomeController extends Controller
     public function install(){
         return view("admin.install");
     }
+
+    public function showProducts(){
+        return view('products.index');
+    }
+
 }

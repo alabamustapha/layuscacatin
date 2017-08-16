@@ -24,10 +24,16 @@ Route::post('/distributors', 'DistributorController@create')->name('add_distribu
 Route::delete('/distributors/{id}/delete', 'DistributorController@delete')->name('delete_distributor');
 
 
+Route::get('/products', 'HomeController@showProducts')->name('products');
+
+
 Route::group(['prefix' => 'admin', "middleware" => ["adminExist","admin"] ], function(){
 
 	Route::get('/', 'AdminController@dashboard')->name('admin_dashboard');
 	Route::get('/distributors', 'AdminController@showDistributors')->name('admin_distributors');
+	Route::get('/products', 'AdminController@showProducts')->name('admin_products');
+	Route::get('/products/create', 'AdminController@createProducts')->name('admin_products_create');
+	Route::post('/products/create', 'AdminController@storeProducts');
 
 });
 
