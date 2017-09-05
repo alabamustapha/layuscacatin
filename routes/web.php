@@ -25,10 +25,15 @@ Route::delete('/distributors/{id}/delete', 'DistributorController@delete')->name
 
 
 Route::get('/products', 'HomeController@showProducts')->name('products');
+Route::post('/products', 'ProductController@store')->name('add_product');
+Route::get('/products/{product}', 'ProductController@show')->name('show_product');
+Route::delete('/products/{product}/delete', 'ProductController@delete')->name('delete_product');
 
 
 Route::group(['prefix' => 'admin', "middleware" => ["adminExist","admin"] ], function(){
 
+	Route::get('/products/{product}/edit', 'ProductController@edit')->name('edit_product');
+	Route::put('/products/{product}', 'ProductController@update')->name('update_product');
 	Route::get('/', 'AdminController@dashboard')->name('admin_dashboard');
 	Route::get('/distributors', 'AdminController@showDistributors')->name('admin_distributors');
 	Route::get('/products', 'AdminController@showProducts')->name('admin_products');

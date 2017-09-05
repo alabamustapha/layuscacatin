@@ -15,12 +15,12 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function(Blueprint $table){
             $table->increments('id');
-            $table->string('SKU')->unique()->nullable();
+            $table->string('sku')->unique()->nullable();
             $table->string('title')->unique();
             $table->text('description');
             $table->decimal('price');
-            $table->string('thumbnail');
-            $table->enum('status', ['new', 'on_sale', 'out_of_stock', 'discontinued']);
+            $table->string('thumbnail')->nullable();
+            $table->enum('status', ['new', 'on_sale', 'out_of_stock', 'discontinued'])->default('on_sale');
         });
     }
 

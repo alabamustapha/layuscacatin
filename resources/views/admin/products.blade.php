@@ -29,7 +29,7 @@
                   </div>
                   <div class="modal-body">
                     
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/products') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/products') }}" enctype="multipart/form-data">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
@@ -63,7 +63,7 @@
                             <label for="description" class="col-md-4 control-label">Product Description</label>
 
                             <div class="col-md-6">
-                                <textarea class="form-control" id="description" required></textarea>
+                                <textarea class="form-control" id="description" name="description" required></textarea>
 
                                 @if ($errors->has('description'))
                                     <span class="help-block">
@@ -79,7 +79,7 @@
                             <div class="col-md-6">
                                 <input id="price" type="text" class="form-control" name="price" value="{{ old('price') }}" >
 
-                                @if ($errors->has('sku'))
+                                @if ($errors->has('price'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('price') }}</strong>
                                     </span>
@@ -100,6 +100,26 @@
                                     <option value="out_of_stock">Out of stock</option>
                                     <option value="off">Discontinued</option>
                                 </select>
+
+                                @if ($errors->has('status'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('status') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="thumbnail" class="col-md-4 control-label">Thumbnail</label>
+
+                            <div class="col-md-6">
+                                <input type="file" name="thumbnail" class="form-control" >
+
+                                @if ($errors->has('thumbnail'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('thumbnail') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
 
@@ -119,7 +139,7 @@
               </div>
             </div>
 
-            <table class="table table-bordered table-hover table-striped">
+            <table class="table table-bordered table-hover table-striped table-responsive">
               <thead>
                 <th>S/N</th>
                 <th>Thumbnail</th>
@@ -134,7 +154,7 @@
                 @foreach($products as $product)
                   <tr>
                     <td>{{ $product->id }}</td>
-                    <td>{{ $product->thumbnail }}</td>
+                    <td><img src="{{ asset('storage/' . $product->thumbnail) }}" title="{{ $product->thumbnail }}" width="50px"></td>
                     <td>{{ $product->title }}</td>
                     <td>{{ $product->description }}</td>
                     <td>{{ $product->price }}</td>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Mail\ContactUs;
 use Illuminate\Support\Facades\Mail;
+use App\Product;
 
 class HomeController extends Controller
 {
@@ -41,7 +42,8 @@ class HomeController extends Controller
     }
 
     public function showProducts(){
-        return view('products.index');
+        $products = Product::paginate(10);
+        return view('products.index', compact('products'));
     }
 
 }

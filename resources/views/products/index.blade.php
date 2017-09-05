@@ -29,27 +29,30 @@
                 <p class="text-muted lead text-center">Browse all products.</p>
 
                 <div class="row products">
-
+                  @foreach($products as $product)      
                     <div class="col-md-3 col-sm-4">
                         <div class="product">
                             <div class="image">
-                                <a href="#">
-                                    <img src="img/product1.jpg" alt="" class="img-responsive image1">
+                                <a href="{{ url('products/' . $product->id) }}">
+                                    <img src="{{ asset('storage/' . $product->thumbnail) }}" alt="" class="img-responsive image1">
                                 </a>
                             </div>
                             <!-- /.image -->
                             <div class="text">
-                                <h3><a href="#">Layus Cacatin Antiseptic Cream</a></h3>
-                                <p class="price">#3000.00</p>
+                                <h3><a href="{{ url('products/' . $product->id)  }}">{{ $product->title }}</a></h3>
+                                <p class="price">{{ '#' . $product->price }}</p>
                                 <p class="buttons">
-                                    <a href="#" class="btn btn-default">View detail</a>
+                                    <a href="{{ url('products/' . $product->id)  }}" class="btn btn-default">View detail</a>
                                     <a href="#" class="btn btn-template-main"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                 </p>
                             </div>
                             <!-- /.text -->
                         </div>
                         <!-- /.product -->
+                      
                     </div>
+
+                    @endforeach  
 
                     
                     
