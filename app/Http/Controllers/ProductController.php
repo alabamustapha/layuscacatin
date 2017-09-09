@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Product;
+use Gloudemans\Shoppingcart\Cart;
 
 class ProductController extends Controller
 {
@@ -62,5 +63,12 @@ class ProductController extends Controller
         $product->delete();
 
         return back()->with('message', "Product deleted");
+    }
+
+    public function addToCart(Request $request, Product $product){
+        
+        $cart = \Cart::add($product->id, $product->title, $request->qty, $product->price)->associate('Product');
+
+        return back()->with('message', "Product(s) added to cart successfully");
     }
 }

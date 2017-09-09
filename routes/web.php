@@ -28,6 +28,9 @@ Route::get('/products', 'HomeController@showProducts')->name('products');
 Route::post('/products', 'ProductController@store')->name('add_product');
 Route::get('/products/{product}', 'ProductController@show')->name('show_product');
 Route::delete('/products/{product}/delete', 'ProductController@delete')->name('delete_product');
+Route::post('/products/{product}/add_to_cart', 'ProductController@addToCart')->name('add_to_cart');
+
+Route::get('/cart', 'CartController@show')->name('cart');
 
 
 Route::group(['prefix' => 'admin', "middleware" => ["adminExist","admin"] ], function(){

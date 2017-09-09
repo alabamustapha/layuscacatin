@@ -60,7 +60,8 @@
                             <div class="col-sm-6">
                                 <div class="box">
 
-                                    <form>
+                                    <form action="{{ route('add_to_cart', ['id' => $product->id]) }}" method="POST">
+                                    {{ csrf_field() }}
                                         <!-- <div class="sizes">
 
                                             <h3>Available sizes</h3>
@@ -78,11 +79,15 @@
                                                 <input type="radio" id="size_l" name="size" value="l" class="size-input">
                                             </label>
 
-                                        </div>
- -->
-                                        <p class="price">$124.00</p>
+                                        </div>-->
 
+
+                                        <p class="price">$124.00</p>
+                                        
+                                            
+                                        
                                         <p class="text-center">
+                                            <input class="form-control" style="display:inline-block; max-width: 80px;" type="number" name="qty" min="1">
                                             <button type="submit" class="btn btn-template-main"><i class="fa fa-shopping-cart"></i> Add to cart</button>
                                             <!-- <button type="submit" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Add to wishlist"><i class="fa fa-heart-o"></i>
                                             </button> -->

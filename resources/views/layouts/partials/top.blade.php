@@ -14,6 +14,8 @@
                                 <a href="https://twitter.com/lcacatin" class="external twitter" data-animate-hover="pulse" target="_blank"><i class="fa fa-twitter"></i></a>
                                 <a href="" class="external linkedin" data-animate-hover="pulse"><i class="fa fa-linkedin"></i></a>
                                 <a href="mailto:info@layuscacatin.com" class="email" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
+                                <a href="mailto:info@layuscacatin.com" class="email" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
+                    
                             </div>
 
                             @if (Auth::guest())

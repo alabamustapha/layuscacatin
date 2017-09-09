@@ -97,6 +97,10 @@
                         </ul>
                     </li>
                     @endif
+                    <li class="{{ activeRoute('cart') }} cart-menu-item" style="text-decoration: none;">
+                        <a href="{{ linkToRoute('cart') }}"><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;<span class="badge">{{ Cart::count() }} Items</span></a>
+                    </li>
+                    
                 </ul>
 
 
