@@ -23,7 +23,7 @@ class CartController extends Controller
 
         \Cart::remove($rowId);
 
-        return back()->withMessage('Item(2) removed from cart Successfully');
+        return back()->withMessage('Item removed from cart Successfully');
     }
 
     

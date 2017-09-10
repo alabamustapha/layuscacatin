@@ -114,7 +114,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3">
+                    <!-- <div class="col-md-3">
                         <div class="product">
                             <div class="image">
                                 <a href="shop-detail.html">
@@ -127,10 +127,10 @@
 
                             </div>
                         </div>
-                        <!-- /.product -->
-                    </div>
+                        
+                    </div> -->
 
-                    <div class="col-md-3">
+                    <!-- <div class="col-md-3">
                         <div class="product">
                             <div class="image">
                                 <a href="shop-detail.html">
@@ -142,10 +142,10 @@
                                 <p class="price">$143</p>
                             </div>
                         </div>
-                        <!-- /.product -->
-                    </div>
+                        
+                    </div> -->
 
-                    <div class="col-md-3">
+                    <!-- <div class="col-md-3">
                         <div class="product">
                             <div class="image">
                                 <a href="shop-detail.html">
@@ -157,8 +157,8 @@
                                 <p class="price">$143</p>
                             </div>
                         </div>
-                        <!-- /.product -->
-                    </div>
+                        
+                    </div> -->
 
                 </div>
 
