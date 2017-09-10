@@ -40,9 +40,10 @@
                             <!-- /.image -->
                             <div class="text">
                                 <h3><a href="{{ url('products/' . $product->id)  }}">{{ $product->title }}</a></h3>
-                                <p class="price">{{ '#' . $product->price }}</p>
+                                <p class="price">{{ '&#x20A6;' . $product->price }}</p>
                                 <p class="buttons">
                                     <a href="{{ url('products/' . $product->id)  }}" class="btn btn-default">View detail</a>
+
                                     <a href="#" class="btn btn-template-main"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                 </p>
                             </div>

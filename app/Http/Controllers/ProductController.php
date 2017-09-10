@@ -71,4 +71,6 @@ class ProductController extends Controller
 
         return back()->with('message', "Product(s) added to cart successfully");
     }
+
+
 }

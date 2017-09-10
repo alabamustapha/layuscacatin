@@ -11,7 +11,7 @@
                     </div>
                     <div class="col-md-5">
                         <ul class="breadcrumb">
-                            <li><a href="{{ url("/products") }}">Products</a>
+                            <li><a href="{{ url('/products') }}">Products</a>
                             </li>
                             <li>{{ $product->SKU }}</li>
                         </ul>
@@ -23,6 +23,12 @@
 
 
  <div id="content">
+
+            @if(Session::has('message'))
+              <div class="alert alert-info">
+                {{ Session::get('message')}}
+              </div>
+            @endif
             <div class="container">
 
                 <div class="row">
@@ -82,12 +88,12 @@
                                         </div>-->
 
 
-                                        <p class="price">$124.00</p>
+                                        <p class="price">{{'N' .$product->price}}</p>
                                         
                                             
                                         
                                         <p class="text-center">
-                                            <input class="form-control" style="display:inline-block; max-width: 80px;" type="number" name="qty" min="1">
+                                            <input class="form-control" style="display:inline-block; max-width: 80px;" type="number" value="1" name="qty" min="1">
                                             <button type="submit" class="btn btn-template-main"><i class="fa fa-shopping-cart"></i> Add to cart</button>
                                             <!-- <button type="submit" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Add to wishlist"><i class="fa fa-heart-o"></i>
                                             </button> -->

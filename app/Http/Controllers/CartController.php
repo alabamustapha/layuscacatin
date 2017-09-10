@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
 
 class CartController extends Controller
 {
@@ -10,4 +11,22 @@ class CartController extends Controller
 
     	return view('cart');
     }
+
+
+    public function checkout(Product $product){
+    	return view('checkout');
+    }
+
+
+    public function removeItemFromCart($rowId){
+
+
+        \Cart::remove($rowId);
+
+        return back()->withMessage('Item(2) removed from cart Successfully');
+    }
+
+    
+
+
 }
