@@ -58,7 +58,7 @@
                                     <tr>
                                         <td><a href="">{{ $cartItem->name }}</a></td>
                                         <td>
-                                            <input type="number" value="{{ $cartItem->qty }}" class="form-control">
+                                            <input type="number" min="1" value="{{ $cartItem->qty }}" class="form-control">
                                         </td>
                                         <td>&#x20A6;{{ $cartItem->price() }}</td>
                                         <td>&#x20A6;0.00</td>
