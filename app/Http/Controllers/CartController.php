@@ -18,12 +18,19 @@ class CartController extends Controller
     }
 
 
+    public function updateCartItem(Request $request, $rowId){
+
+    	\Cart::update($rowId, $request->input('qty'));
+
+        return back()->with('message','Cart Updated Successfully');
+    }
+
+
     public function removeItemFromCart($rowId){
-
-
+        
         \Cart::remove($rowId);
 
-        return back()->withMessage('Item removed from cart Successfully');
+        return back()->with('warning','Item removed from cart Successfully');
     }
 
     

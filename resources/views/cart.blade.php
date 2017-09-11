@@ -21,11 +21,7 @@
 </div>
 <div id="content">
 
-    @if(Session::has('message'))
-        <div class="alert alert-warning">
-            {{Session::get('message')}}
-        </div>
-    @endif
+    @include('layouts.partials.messages')
 
     <div class="container">
 
@@ -37,72 +33,71 @@
 
             <div class="col-md-9 clearfix" id="basket">
 
-                <div class="box">
+                <div class="box">                    
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Quantity</th>
+                                <th>Unit price</th>
+                                <th>Discount</th>
+                                <th colspan="2">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        @foreach(Cart::content() as $cartItem)
+                            <tr>
+                                <td><a href="">{{ $cartItem->name }}</a></td>
+                                <td>
+                                <form id="cart-item{{$cartItem->rowId}}" method="POST" action="{{ action('CartController@updateCartItem', $cartItem->rowId)}} ">
+                                {{ csrf_field() }}
+                                {{ method_field('PUT') }}
+                                    <input type="number" min="1" name="qty" value="{{ $cartItem->qty }}" class="form-control">
+                                
+                                </form>
+                                </td>
+                                <td>&#x20A6;{{ $cartItem->price() }}</td>
+                                <td>&#x20A6;0.00</td>
+                                <td>&#x20A6;{{ $cartItem->total() }}</td>
+                                <td>
+                                    <button title="Update Item Quantity" class="btn btn-default" onclick="event.preventDefault(); document.getElementById('cart-item{{$cartItem->rowId}}')
+                                        .submit();">
+                                        <i class="fa fa-refresh"></i>
+                                    </button>
+                                    <button title="Remove Item from Cart" class="btn btn-danger" onclick="event.preventDefault();
+                                    document.getElementById('remove-item{{$cartItem->rowId}}').submit();">
+                                        <i class="fa fa-trash-o"></i>
+                                        
+                                    </button>
 
-                    <form method="POST" action="">
-                    {{ csrf_field() }}
 
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>Product</th>
-                                        <th>Quantity</th>
-                                        <th>Unit price</th>
-                                        <th>Discount</th>
-                                        <th colspan="2">Total</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                @foreach(Cart::content() as $cartItem)
-                                    <tr>
-                                        <td><a href="">{{ $cartItem->name }}</a></td>
-                                        <td>
-                                            <input type="number" min="1" value="{{ $cartItem->qty }}" class="form-control">
-                                        </td>
-                                        <td>&#x20A6;{{ $cartItem->price() }}</td>
-                                        <td>&#x20A6;0.00</td>
-                                        <td>&#x20A6;{{ $cartItem->total() }}</td>
-                                        <td>
-                                            <button onclick="event.preventDefault();
-                                            document.getElementById('remove-item{{$cartItem->rowId}}').submit();">
-                                                <i class="fa fa-trash-o"></i>
-                                                
-                                            </button>
+                                    <form id="remove-item{{ $cartItem->rowId }}" action="{{ action('CartController@removeItemFromCart', $cartItem->rowId) }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                        {{ method_field('DELETE') }}
+                                        
+                                    </form> 
+                                </td>
+                            </tr>
+                         @endforeach   
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th colspan="5">Total</th>
+                                <th colspan="2">&#x20A6;{{ Cart::total() }}</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <!-- /.table-responsive -->
 
-                                            <form id="remove-item{{ $cartItem->rowId }}" action="{{ action('CartController@removeItemFromCart', $cartItem->rowId) }}" method="POST" style="display: none;">
-                                                {{ csrf_field() }}
-                                                {{method_field('DELETE')}}
-                                                
-                                            </form> 
-                                        </td>
-                                    </tr>
-                                 @endforeach   
-                                </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th colspan="5">Total</th>
-                                        <th colspan="2">&#x20A6;{{ Cart::total() }}</th>
-                                    </tr>
-                                </tfoot>
-                            </table>
-
+                    <div class="box-footer">
+                        <div class="pull-left">
+                            <a href="{{ action('HomeController@showProducts')}}" class="btn btn-default"><i class="fa fa-chevron-left"></i> Continue shopping</a>
                         </div>
-                        <!-- /.table-responsive -->
-
-                        <div class="box-footer">
-                            <div class="pull-left">
-                                <a href="{{ action('HomeController@showProducts')}}" class="btn btn-default"><i class="fa fa-chevron-left"></i> Continue shopping</a>
-                            </div>
-                            <div class="pull-right">
-                                <a href="{{ action('CartController@show') }}" class="btn btn-default"><i class="fa fa-refresh"></i> Update cart</a>
-
-                                <a href="{{ action('CartController@checkout')}}" type="submit" class="btn btn-template-main">Proceed to checkout <i class="fa fa-chevron-right"></i>
-                                </a>
-                            </div>
+                        <div class="pull-right">
+                            <a href="{{ action('CartController@checkout')}}" type="submit" class="btn btn-template-main">Proceed to checkout <i class="fa fa-chevron-right"></i>
+                            </a>
                         </div>
-
-                    </form>
+                    </div>
 
                 </div>
                 <!-- /.box -->
@@ -161,6 +156,7 @@
                     </div> -->
 
                 </div>
+                <!-- end row -->
 
             </div>
             <!-- /.col-md-9 -->

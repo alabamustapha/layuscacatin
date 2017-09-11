@@ -39,6 +39,8 @@ Route::get('/checkout', 'CartController@checkout')->name('checkout');
 
 Route::delete('/item/{id}/delete', 'CartController@removeItemFromCart')->name('remove_item_from_cart');
 
+Route::put('/item/{id}', 'CartController@updateCartItem')->name('update_cart_item');
+
 
 
 
