@@ -21,13 +21,23 @@
 
 <div id="content">
             <div class="container">
+                @include('flash::message')
+
+                @if($errors->any())
+                    <div class="alert alert-danger">
+                    @foreach($errors->all() as $error)
+                        <li>{{ $error}}</li>
+                    @endforeach
+                    </div>
+                @endif
 
                 <div class="row">
 
                     <div class="col-md-9 clearfix" id="checkout">
 
                         <div class="box">
-                            <form method="POST" action="">
+                            <form id="submit-order" method="POST" action="{{ action('OrdersController@store')}}">
+                            {{ csrf_field()}}
 
                                 <ul class="nav nav-pills nav-justified">
                                     <li class="disabled"><a href="#"><i class="fa fa-map-marker"></i><br>Address</a>
@@ -44,30 +54,30 @@
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <div class="form-group">
-                                                <label for="firstname">Firstname</label>
-                                                <input type="text" class="form-control" id="firstname">
+                                                <label for="fullname">Full Name*</label>
+                                                <input type="text" class="form-control" name="fullname">
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-group">
-                                                <label for="lastname">Lastname</label>
-                                                <input type="text" class="form-control" id="lastname">
+                                                <label for="email">Email*</label>
+                                                <input type="email" class="form-control" name="email">
                                             </div>
                                         </div>
                                     </div>
                                     <!-- /.row -->
 
                                     <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="phone">Telephone*</label>
+                                                <input type="text" class="form-control" name="phone">
+                                            </div>
+                                        </div>
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label for="company">Company</label>
-                                                <input type="text" class="form-control" id="company">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label for="street">Street</label>
-                                                <input type="text" class="form-control" id="street">
+                                                <input type="text" class="form-control" name="company">
                                             </div>
                                         </div>
                                     </div>
@@ -76,39 +86,28 @@
                                     <div class="row">
                                         <div class="col-sm-6 col-md-3">
                                             <div class="form-group">
-                                                <label for="city">City</label>
-                                                <input type="text" class="form-control" id="city">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-3">
-                                            <div class="form-group">
-                                                <label for="zip">ZIP</label>
-                                                <input type="text" class="form-control" id="zip">
+                                                <label for="country">Country</label>
+                                                <!-- <select class="form-control" name="country"></select> -->
+                                                <input type="text" name="country" class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-sm-6 col-md-3">
                                             <div class="form-group">
                                                 <label for="state">State</label>
-                                                <select class="form-control" id="state"></select>
+                                                <!-- <select class="form-control" name="state"></select> -->
+                                                <input class="form-control" type="text" name="state">
                                             </div>
                                         </div>
                                         <div class="col-sm-6 col-md-3">
                                             <div class="form-group">
-                                                <label for="country">Country</label>
-                                                <select class="form-control" id="country"></select>
+                                                <label for="city">City</label>
+                                                <input type="text" class="form-control" name="city">
                                             </div>
                                         </div>
-
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-3">
                                             <div class="form-group">
-                                                <label for="phone">Telephone</label>
-                                                <input type="text" class="form-control" id="phone">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label for="email">Email</label>
-                                                <input type="text" class="form-control" id="email">
+                                                <label for="street">Street</label>
+                                                <input type="text" class="form-control" name="street">
                                             </div>
                                         </div>
 
@@ -117,7 +116,7 @@
 
 
                                     <hr>
-                                    <h1>Payment Method</h1>
+                                    <h3>Payment Method</h3>
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <div class="box payment-method">
@@ -128,7 +127,7 @@
 
                                                 <div class="box-footer text-center">
 
-                                                    <input type="radio" name="payment" value="payment1">
+                                                    <input type="radio" name="payment_method" value="cash">
                                                 </div>
                                             </div>
                                         </div>
@@ -142,7 +141,7 @@
 
                                                 <div class="box-footer text-center">
 
-                                                    <input type="radio" name="payment" value="payment2">
+                                                    <input type="radio" name="payment_method" value="webpay">
                                                 </div>
                                             </div>
                                         </div>
@@ -156,7 +155,7 @@
 
                                                 <div class="box-footer text-center">
 
-                                                    <input type="radio" name="payment" value="payment3">
+                                                    <input type="radio" name="payment_method" value="transfer">
                                                 </div>
                                             </div>
                                         </div>
@@ -164,7 +163,7 @@
 
 
                                     <hr>
-                                    <h1>Order Review</h1>
+                                    <h3>Order Review</h3>
                                     <div class="table-responsive">
                                         <table class="table">
                                             <thead>
@@ -206,8 +205,9 @@
                                     <div class="pull-left">
                                         <a href="{{ action('CartController@show')}}" class="btn btn-default"><i class="fa fa-chevron-left"></i>Back to basket</a>
                                     </div>
-                                    <div class="pull-right">
-                                        <button type="submit" class="btn btn-template-main">Place an Order<i class="fa fa-chevron-right"></i>
+                                    <div  class="pull-right">
+                                        <button onclick="event.preventDefault();
+                                        document.getElementById('submit-order').submit();" type="submit" class="btn btn-template-main">Place an Order<i class="fa fa-chevron-right"></i>
                                         </button>
                                     </div>
                                 </div>

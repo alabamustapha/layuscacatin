@@ -57,3 +57,8 @@ Route::group(['prefix' => 'admin', "middleware" => ["adminExist","admin"] ], fun
 
 });
 
+
+//OrdersController
+
+Route::post('/order', 'OrdersController@store')->name('store_order');
+

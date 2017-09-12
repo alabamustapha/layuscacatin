@@ -14,6 +14,13 @@ class CartController extends Controller
 
 
     public function checkout(Product $product){
+
+        // flash()->overlay('Modal Message', 'Modal Title');
+        // flash()->overlay('You are now a Laracasts member!', 'Yay');
+        // flash('Message')->important();
+        // flash('Message')->overlay();
+        // flash('Message')->success();
+
     	return view('checkout');
     }
 
@@ -22,7 +29,9 @@ class CartController extends Controller
 
     	\Cart::update($rowId, $request->input('qty'));
 
-        return back()->with('message','Cart Updated Successfully');
+        flash('Cart Updated Successfully')->success();
+
+        return back();
     }
 
 
@@ -30,7 +39,10 @@ class CartController extends Controller
         
         \Cart::remove($rowId);
 
-        return back()->with('warning','Item removed from cart Successfully');
+        flash('Item Removed From Cart Successfully')->overlay();
+        // flash('Message')->overlay()
+
+        return back();
     }
 
     

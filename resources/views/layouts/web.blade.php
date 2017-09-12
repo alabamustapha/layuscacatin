@@ -104,6 +104,11 @@
     <script src="js/gmaps.js"></script>
     <script src="js/gmaps.init.js"></script>
 
+    <script>
+         $('#flash-overlay-modal').modal();
+         $('div.alert').not('.alert-important').delay(3000).fadeOut(350);
+    </script>
+
 
     
 </body>

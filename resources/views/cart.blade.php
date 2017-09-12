@@ -21,7 +21,7 @@
 </div>
 <div id="content">
 
-    @include('layouts.partials.messages')
+    @include('flash::message')
 
     <div class="container">
 
