@@ -23,13 +23,6 @@
             <div class="container">
                 @include('flash::message')
 
-                @if($errors->any())
-                    <div class="alert alert-danger">
-                    @foreach($errors->all() as $error)
-                        <li>{{ $error}}</li>
-                    @endforeach
-                    </div>
-                @endif
 
                 <div class="row">
 
@@ -51,68 +44,12 @@
                                 </ul>
 
                                 <div class="content">
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label for="fullname">Full Name*</label>
-                                                <input type="text" class="form-control" name="fullname">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label for="email">Email*</label>
-                                                <input type="email" class="form-control" name="email">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- /.row -->
 
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label for="phone">Telephone*</label>
-                                                <input type="text" class="form-control" name="phone">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label for="company">Company</label>
-                                                <input type="text" class="form-control" name="company">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- /.row -->
-
-                                    <div class="row">
-                                        <div class="col-sm-6 col-md-3">
-                                            <div class="form-group">
-                                                <label for="country">Country</label>
-                                                <!-- <select class="form-control" name="country"></select> -->
-                                                <input type="text" name="country" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-3">
-                                            <div class="form-group">
-                                                <label for="state">State</label>
-                                                <!-- <select class="form-control" name="state"></select> -->
-                                                <input class="form-control" type="text" name="state">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-3">
-                                            <div class="form-group">
-                                                <label for="city">City</label>
-                                                <input type="text" class="form-control" name="city">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <div class="form-group">
-                                                <label for="street">Street</label>
-                                                <input type="text" class="form-control" name="street">
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <!-- /.row -->
+                                @if(Auth::guest())
+                                    @include('layouts.partials.checkout_info_guest')
+                                @else
+                                    @include('layouts.partials.checkout_info_customer')
+                                @endif
 
 
                                     <hr>
@@ -127,7 +64,7 @@
 
                                                 <div class="box-footer text-center">
 
-                                                    <input type="radio" name="payment_method" value="cash">
+                                                    <input type="radio" name="payment_method" value="cash" {{ (old('payment_method') == 'cash') ? 'checked' : '' }}>
                                                 </div>
                                             </div>
                                         </div>
@@ -141,7 +78,7 @@
 
                                                 <div class="box-footer text-center">
 
-                                                    <input type="radio" name="payment_method" value="webpay">
+                                                    <input type="radio" name="payment_method" value="webpay" {{ (old('payment_method') == 'webpay') ? 'checked' : '' }}>
                                                 </div>
                                             </div>
                                         </div>
@@ -155,7 +92,7 @@
 
                                                 <div class="box-footer text-center">
 
-                                                    <input type="radio" name="payment_method" value="transfer">
+                                                    <input type="radio" name="payment_method" value="transfer" {{ (old('payment_method') == 'transfer') ? 'checked' : '' }}>
                                                 </div>
                                             </div>
                                         </div>
@@ -232,7 +169,7 @@
 
             </div>
             <!-- /.container -->
-        </div>
+</div>
         <!-- /#content -->
 
 

@@ -65,7 +65,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-7">
-                        <h1>Welcome Admin</h1>
+                        <h1>Welcome Customer</h1>
                     </div>
                     <div class="col-md-5">
                         <ul class="breadcrumb">
@@ -89,7 +89,7 @@
              
                 <div class="col-md-2">  
 
-                    @include('layouts.partials.admin_nav')
+                    @include('layouts.partials.customer_nav')
 
                 </div>
 
@@ -111,7 +111,7 @@
             <div class="container">
                 <div class="col-md-12">
                     <p class="pull-left">&copy; {{ date("Y") }}. Layus Investment Company Limited</p>
-                    <p class="pull-right">Site by <a href="https://redehub.com.ng">Rede Hub</a>
+                    <p class="pull-right">Site by <a href="https://redehub.com.ng" target="_blank">Rede Hub</a>
                          
                     </p>
 

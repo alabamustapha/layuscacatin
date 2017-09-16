@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Order;
+use App\User;
 
 class OrdersController extends Controller
 {
     public function store(Request $request){
+
 
     	$rules = [
     		'fullname'		=>	'required|string',
@@ -21,10 +24,48 @@ class OrdersController extends Controller
 
     	$this->validate($request, $rules);
 
-    	if($request->input('payment_method') == 'webpay'){
-    		return redirect('https://paystack.com');
+
+    	if(\Auth::user()) {
+
+
+	    	$user = User::find(\Auth::id());
+
+	    	$user->phone = $request->input('phone');
+	    	$user->company = $request->input('company');
+	    	$user->country = $request->input('country');
+	    	$user->state = $request->input('state');
+	    	$user->city = $request->input('city');
+	    	$user->street = $request->input('street');
+	    	$user->save();
     	}
 
 
+ 
+    	\Auth::user()->orders()->create($request->all());
+
+    	// \Cart::store(\Auth::id());
+    	
+    	// \Cart::destroy();
+
+    	if($request->input('payment_method') == 'webpay'){
+
+            return redirect()->route('make_payment');
+    	 }
+    	 // else {
+    	// 	//if user is a guest
+
+    	// 	//1. send them an email in acknowledgment of recieved order
+
+    	// 	//else if user is a member
+
+    	// 	// redirect to their account page
+    	// }
+
     }
+
+    public function payment(){
+
+        return view('pay');
+    }
+
 }

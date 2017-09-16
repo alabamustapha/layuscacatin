@@ -24,7 +24,7 @@ class CreateOrdersTable extends Migration
             $table->string('city');
             $table->string('street');
             $table->string('payment_method');
-            $table->enum('status', ['pending', 'confirmed', 'delivered', 'removed'])->default('pending');
+            $table->enum('status', ['received', 'cancelled', 'delivered', 'on hold'])->default('on hold');
             $table->timestamps();
         });
     }
