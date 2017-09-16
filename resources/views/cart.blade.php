@@ -30,11 +30,10 @@
                 <p class="text-muted lead">You currently have {{ Cart::count() }} item(s) in your cart.</p>
             </div>
 
-
             <div class="col-md-9 clearfix" id="basket">
 
                 <div class="box">                    
-                    <table class="table">
+                    <table class="table table-striped table-hover table-responsive">
                         <thead>
                             <tr>
                                 <th>Product</th>
