@@ -64,6 +64,7 @@ class ProductController extends Controller
 
         return back()->with('message', "Product deleted");
     }
+    
 
     public function addToCart(Request $request, Product $product){
         

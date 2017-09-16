@@ -21,7 +21,6 @@
 </div>
 <div id="content">
 
-    @include('flash::message')
 
     <div class="container">
 
@@ -31,6 +30,9 @@
             </div>
 
             <div class="col-md-9 clearfix" id="basket">
+
+            @include('flash::message')
+
 
                 <div class="box">                    
                     <table class="table table-striped table-hover table-responsive">

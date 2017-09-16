@@ -15,12 +15,6 @@ class CartController extends Controller
 
     public function checkout(Product $product){
 
-        // flash()->overlay('Modal Message', 'Modal Title');
-        // flash()->overlay('You are now a Laracasts member!', 'Yay');
-        // flash('Message')->important();
-        // flash('Message')->overlay();
-        // flash('Message')->success();
-
     	return view('checkout');
     }
 
@@ -40,8 +34,6 @@ class CartController extends Controller
         \Cart::remove($rowId);
 
         flash('Item Removed From Cart Successfully')->overlay();
-        // flash('Message')->overlay()
-
         return back();
     }
 
