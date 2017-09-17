@@ -44,7 +44,7 @@
                             <th>Name</th>
                             <th>Location</th>
                             <th>Phone</th>
-                            <th>For Women</th>
+                            <!-- <th>For Women</th> -->
                           </thead>
                           <tbody>
                             @foreach($distributors as $distributor)
@@ -53,7 +53,7 @@
                                 <td>{{ $distributor->name }}</td>
                                 <td>{{ $distributor->location }}</td>
                                 <td>{{ $distributor->phone }}</td>
-                                <td>{{ $distributor->for_women == 1 ? "Available" : "Not Available" }}</td>                                              
+                                <!-- <td>{{ $distributor->for_women == 1 ? "Available" : "Not Available" }}</td> -->                                              
                               </tr>
                             @endforeach
                           </tbody>
@@ -62,7 +62,7 @@
                             <th>Name</th>
                             <th>Location</th>
                             <th>Phone</th>
-                            <th>For Women</th>
+                            <!-- <th>For Women</th> -->
                           </tfoot>
                       </table>
 
