@@ -30,6 +30,8 @@
 
                         <div class="box">
                             <form id="submit-order" method="POST" action="{{ action('OrdersController@store')}}">
+
+                            
                             {{ csrf_field()}}
 
                                 <ul class="nav nav-pills nav-justified">
@@ -142,12 +144,14 @@
                                     <div class="pull-left">
                                         <a href="{{ action('CartController@show')}}" class="btn btn-default"><i class="fa fa-chevron-left"></i>Back to basket</a>
                                     </div>
+
                                     <div  class="pull-right">
                                         <button onclick="event.preventDefault();
                                         document.getElementById('submit-order').submit();" type="submit" class="btn btn-template-main">Place an Order<i class="fa fa-chevron-right"></i>
                                         </button>
                                     </div>
                                 </div>
+
 
                             </form>
                         </div>
@@ -170,7 +174,7 @@
             </div>
             <!-- /.container -->
 </div>
-        <!-- /#content -->
+<!-- /#content -->
 
 
 @endsection

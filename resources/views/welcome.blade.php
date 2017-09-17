@@ -4,6 +4,8 @@
 
 @include('layouts.partials.home_slider')
 
+@include('flash::message')
+
         <section class="bar background-white">
             <div class="container">
                 <div class="col-md-12">

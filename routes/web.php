@@ -51,6 +51,7 @@ Route::group(['prefix' => 'admin', "middleware" => ["adminExist","admin"] ], fun
 	Route::put('/products/{product}', 'ProductController@update')->name('update_product');
 	Route::get('/', 'AdminController@dashboard')->name('admin_dashboard');
 	Route::get('/distributors', 'AdminController@showDistributors')->name('admin_distributors');
+	Route::get('/transactions', 'AdminController@showTransactions')->name('admin_transactions');
 	Route::get('/products', 'AdminController@showProducts')->name('admin_products');
 	Route::get('/orders', 'AdminController@showOrders')->name('admin_orders');
 	Route::get('/products/create', 'AdminController@createProducts')->name('admin_products_create');
@@ -62,6 +63,7 @@ Route::group(['prefix' => 'admin', "middleware" => ["adminExist","admin"] ], fun
 //OrdersController
 
 Route::get('/make-payment', 'OrdersController@payment')->name('make_payment');
+
 Route::post('/order', 'OrdersController@store')->name('store_order');
 Route::put('/orders/{id}', 'AdminController@updateOrder')->name('update_order');
 

@@ -48,6 +48,8 @@
                                     </tbody>
 
                                 </table>
+
+                                {{ $orders->links()}}
                             </div>
                             <!-- /.table-responsive -->
 
