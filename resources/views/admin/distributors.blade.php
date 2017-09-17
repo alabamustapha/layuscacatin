@@ -74,7 +74,9 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <input type="hidden" name="for_women" value="1">
+
+                        <!-- <div class="form-group">
                             <label for="for_women" class="col-md-4 control-label">For women</label>
 
                             <div class="col-md-6">
@@ -84,7 +86,7 @@
                                     <option value="0">Not available</option>
                                 </select>
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
