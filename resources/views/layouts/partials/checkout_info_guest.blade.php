@@ -116,7 +116,7 @@
     <div class="col-sm-3">
         <div class="form-group{{ $errors->has('street') ? ' has-error' : '' }}">
             <label for="street">Street*</label>
-            <input type="text" class="form-control" name="state" value="{{ old('street') }}" required>
+            <input type="text" class="form-control" name="street" value="{{ old('street') }}" required>
 
             @if ($errors->has('street'))
                 <span class="help-block">
