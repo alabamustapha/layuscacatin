@@ -15,16 +15,21 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('fullname');
+            $table->string('fullname')->nullable();
             $table->string('email');
-            $table->string('phone');
+            $table->string('phone')->nullable();
+            $table->string('transaction_id')->unique()->nullable();
+            $table->decimal('amount', 15, 2)->nullable();
+            $table->string('reference')->nullable();
+            $table->string('authorization_code')->nullable();
             $table->string('company')->nullable();
-            $table->string('country');
-            $table->string('state');
-            $table->string('city');
-            $table->string('street');
+            $table->string('country')->nullable();
+            $table->string('state')->nullable();
+            $table->string('city')->nullable();
+            $table->string('street')->nullable();
             $table->string('payment_method');
-            $table->enum('status', ['received', 'cancelled', 'delivered', 'on hold'])->default('on hold');
+            $table->timestamp('transaction_date')->nullable();
+            $table->enum('status', ['payed','received', 'cancelled', 'delivered', 'on hold'])->default('on hold');
             $table->timestamps();
         });
     }

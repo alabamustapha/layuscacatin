@@ -16,16 +16,13 @@ class AdminController extends Controller
         $orders = Order::all()->count();
         $distributors = Distributor::all()->count();
         $products = Product::all()->count();
-        $transactions = Transaction::all()->count();
         $customers = User::where('role', '=', 'customer')->get()->count();
 
     	return view('admin.dashboard', compact(
             'orders', 
             'distributors',
             'customers', 
-            'products',
-            'transactions'
-
+            'products'
             ));
     }
 

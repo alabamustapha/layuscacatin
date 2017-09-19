@@ -29,7 +29,7 @@
                                         <tr>
                                             <th># {{$order->id}}</th>
                                             <td>{{$order->created_at}}</td>
-                                            <td>{{ $order->user->name}}</td>
+                                            <td>{{ $order->fullname}}</td>
                                             <td>
                                             @if($order->status == 'received')
                                                 <span class="label label-info">{{ $order->status}} </span>

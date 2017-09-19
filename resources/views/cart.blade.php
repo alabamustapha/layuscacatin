@@ -95,8 +95,13 @@
                             <a href="{{ action('HomeController@showProducts')}}" class="btn btn-default"><i class="fa fa-chevron-left"></i> Continue shopping</a>
                         </div>
                         <div class="pull-right">
+                        @if(Cart::count() > 0)
                             <a href="{{ action('CartController@checkout')}}" type="submit" class="btn btn-template-main">Proceed to checkout <i class="fa fa-chevron-right"></i>
                             </a>
+                        @else
+                        <a disabled href="{{ action('CartController@checkout')}}" type="submit" class="btn btn-template-main">Proceed to checkout <i class="fa fa-chevron-right"></i>
+                            </a>
+                        @endif
                         </div>
                     </div>
 

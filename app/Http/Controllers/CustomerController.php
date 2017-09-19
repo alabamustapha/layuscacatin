@@ -18,21 +18,22 @@ class CustomerController extends Controller
 
     public function myOrders($id) {
 
-    	$id = \Auth::id();
+    	$id = \Auth::user()->email;
 
-    	$orders = Order::with('user')->where('user_id', $id)->paginate(5);
+
+    	$orders = Order::with('user')->where('email', $id)->paginate(5);
 
     	
 
     	return view('customers.orders', compact('orders'));
     }
 
-    public function orderDetails($id){
+    public function orderDetails($id) {
 
-    	$id = \Auth::id();
+    	$id = \Auth::user()->email;
 
     	// $orders = \DB::table('shoppingcart')->where('identifier', $id)->get();
-    	$orders = ShoppingCart::with('order')->where('identifier', '=', $id)->get();
+    	$orders = ShoppingCart::where('identifier', '=', $id)->get();
 
     	return view('customers.order-details', compact('orders'));
     }

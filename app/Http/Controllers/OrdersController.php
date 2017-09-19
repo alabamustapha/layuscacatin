@@ -24,12 +24,10 @@ class OrdersController extends Controller
 
     	$this->validate($request, $rules);
 
-
+        //if user is a registered customer, update their information
     	if(\Auth::user()) {
 
-
 	    	$user = User::find(\Auth::id());
-
 	    	$user->phone = $request->input('phone');
 	    	$user->company = $request->input('company');
 	    	$user->country = $request->input('country');
@@ -37,43 +35,45 @@ class OrdersController extends Controller
 	    	$user->city = $request->input('city');
 	    	$user->street = $request->input('street');
 	    	$user->save();
-    	}else{
 
-        	// \Auth::user()->orders()->create($request->all());
-            $order = new Order;
-            
-        }
-
-
+    	}  
  
-
-    	// \Cart::store(\Auth::id());
-    	
-    	// \Cart::destroy();
-
+        //if user wants to pay with a payment gateway
     	if($request->input('payment_method') == 'webpay'){
 
             $formData = $request->all();
 
+            //link them to a payment page with some data
             return view('pay', compact('formData'));
+            
+    	 } else {
 
-            // return redirect()->route('make_payment')->withEmail($request->input('email'));
-    	 }
-    	 // else {
-    	// 	//if user is a guest
 
-    	// 	//1. send them an email in acknowledgment of recieved order
+            //if a user wants to pay through transfer or pay-on-delivery
 
-    	// 	//else if user is a member
+            //just fill the orders table with their info and continue with the processing
+            $order = new Order;
 
-    	// 	// redirect to their account page
-    	// }
+            $order->create($request->all()); 
 
+            //admin can send an email to the user who made the order to let them know their order was recieved and currently being processed and details of their order.
+
+            \Cart::instance('cart')->store($request->input('email'));
+
+            \Cart::destroy();
+
+
+            if(\Auth::user()){
+
+                flash('Order placed successfully, check your dashboard to follow up with your orders ')->overlay();
+                return redirect('/');
+            } else {
+                flash("Order placed successfully. Email has been sent to the email address provided with order details. we'll get back to you when we recieved your payment. thanks")->overlay();
+                return redirect('/');
+            }
+
+         }
+    	 
     }
-
-    // public function payment(){
-
-    //     return view('pay');
-    // }
 
 }
