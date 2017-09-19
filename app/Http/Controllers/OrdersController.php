@@ -37,11 +37,15 @@ class OrdersController extends Controller
 	    	$user->city = $request->input('city');
 	    	$user->street = $request->input('street');
 	    	$user->save();
-    	}
+    	}else{
+
+        	// \Auth::user()->orders()->create($request->all());
+            $order = new Order;
+            
+        }
 
 
  
-    	\Auth::user()->orders()->create($request->all());
 
     	// \Cart::store(\Auth::id());
     	
@@ -49,7 +53,11 @@ class OrdersController extends Controller
 
     	if($request->input('payment_method') == 'webpay'){
 
-            return redirect()->route('make_payment');
+            $formData = $request->all();
+
+            return view('pay', compact('formData'));
+
+            // return redirect()->route('make_payment')->withEmail($request->input('email'));
     	 }
     	 // else {
     	// 	//if user is a guest
@@ -63,9 +71,9 @@ class OrdersController extends Controller
 
     }
 
-    public function payment(){
+    // public function payment(){
 
-        return view('pay');
-    }
+    //     return view('pay');
+    // }
 
 }

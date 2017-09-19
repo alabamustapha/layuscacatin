@@ -32,11 +32,20 @@
                         <div class="item">
                             <div class="icon"><i class="fa fa-shopping-cart"></i>
                             </div>
+                            <h4><span class="counter">{{ $transactions }}</span><br>
+
+                            {{($transactions > 1) ? 'Transactions' : 'Transaction'}}</h4>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-3 col-sm-6">
+                        <div class="item">
+                            <div class="icon"><i class="fa fa-shopping-cart"></i>
+                            </div>
                             <h4><span class="counter">{{ $orders }}</span><br>
 
 							{{($orders > 1) ? 'Orders' : 'Order'}}</h4>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="col-md-3 col-sm-6">
                         <div class="item">
                             <div class="icon"><i class="fa fa-align-justify"></i>
