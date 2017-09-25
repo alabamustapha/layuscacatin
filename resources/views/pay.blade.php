@@ -24,7 +24,7 @@
         <div class="row" style="margin-bottom:40px;">
           <div class="col-md-8 col-md-offset-2">
             <p>
-                <div>
+                <div style="text-align: center;">
                     {{ '&#x20A6;'. Cart::total()}}
                 </div>
             </p>
@@ -37,7 +37,7 @@
             {{ csrf_field() }} {{-- works only when using laravel 5.1, 5.2 --}}
 
             <p>
-              <button class="btn btn-success btn-lg btn-block" type="submit" value="Pay Now!">
+              <button class="btn btn-template-main btn-lg btn-block" type="submit" value="Pay Now!">
               <i class="fa fa-plus-circle fa-lg"></i> Pay Now!
               </button>
             </p>

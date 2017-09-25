@@ -10,7 +10,6 @@ class OrdersController extends Controller
 {
     public function store(Request $request){
 
-
     	$rules = [
     		'fullname'		=>	'required|string',
     		'email'			=>	'required|string',
@@ -48,7 +47,6 @@ class OrdersController extends Controller
             
     	 } else {
 
-
             //if a user wants to pay through transfer or pay-on-delivery
 
             //just fill the orders table with their info and continue with the processing
@@ -58,7 +56,8 @@ class OrdersController extends Controller
 
             //admin can send an email to the user who made the order to let them know their order was recieved and currently being processed and details of their order.
 
-            \Cart::instance('cart')->store($request->input('email'));
+            // \Cart::instance('cart')->store($request->input('email'));
+            \Cart::store($request->input('email'));
 
             \Cart::destroy();
 
@@ -68,6 +67,7 @@ class OrdersController extends Controller
                 flash('Order placed successfully, check your dashboard to follow up with your orders ')->overlay();
                 return redirect('/');
             } else {
+
                 flash("Order placed successfully. Email has been sent to the email address provided with order details. we'll get back to you when we recieved your payment. thanks")->overlay();
                 return redirect('/');
             }

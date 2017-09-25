@@ -9,7 +9,7 @@ class ShoppingCart extends Model
     protected $table = "shoppingcart";
 
 
-    public function order(){
+    public function items(){
     	
     	return $this->belongsTo('App\Order');
     }

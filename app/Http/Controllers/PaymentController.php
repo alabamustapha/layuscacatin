@@ -35,7 +35,7 @@ class PaymentController extends Controller
         $trans->email = $paymentDetails['data']['customer']['email'];
         $trans->phone = $paymentDetails['data']['customer']['phone'];
         $trans->transaction_id = $paymentDetails['data']['id'];
-        $trans->amount = $paymentDetails['data']['amount'];
+        $trans->amount = $paymentDetails['data']['amount'] / 100;
         $trans->reference = $paymentDetails['data']['reference'];
         $trans->authorization_code = $paymentDetails['data']['authorization']['authorization_code'];
         $trans->payment_method = 'webpay';
@@ -45,7 +45,7 @@ class PaymentController extends Controller
         $trans->save();
 
 
-        \Cart::instance('cart')->store($paymentDetails['data']['customer']['email']);
+        \Cart::store($paymentDetails['data']['customer']['email']);
 
         \Cart::destroy();
 

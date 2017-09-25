@@ -32,9 +32,12 @@ class CustomerController extends Controller
 
     	$id = \Auth::user()->email;
 
-    	// $orders = \DB::table('shoppingcart')->where('identifier', $id)->get();
-    	$orders = ShoppingCart::where('identifier', '=', $id)->get();
+    	$order = \DB::table('orders')->where('email', $id)->first();
+        // $carts = ShoppingCart::with('items')->where('identifier', '=', $id)->get()->toArray();
+    	$cart = \DB::table('shoppingcart')->where('identifier', '=', $id)->get()->toJson();
 
-    	return view('customers.order-details', compact('orders'));
+        $cart = json_decode($cart);
+
+    	return view('customers.order-details')->with('cart', $cart)->with('order',$order);
     }
 }

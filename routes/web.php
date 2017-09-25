@@ -72,6 +72,7 @@ Route::put('/orders/{id}', 'AdminController@updateOrder')->name('update_order');
 Route::get('/customer', 'CustomerController@dashboard')->name('customer_dashbaord');
 
 Route::get('/customer/{id}/orders', 'CustomerController@myOrders')->name('customer_orders');
+
 Route::get('/customer/{id}/orders/{orderId}/details', 'CustomerController@orderDetails')->name('customer_order_details');
 
 

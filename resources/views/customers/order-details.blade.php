@@ -7,11 +7,11 @@
 
     <div class="col-md-9 clearfix" id="customer-order">
 
-    {{ var_dump($orders)}}
+    {{ var_dump($cart[0]->content) }}
 
     
 
-        <p class="lead">Order #1735 was placed on <strong>22/06/2013</strong> and is currently <strong>Being prepared</strong>.</p>
+        <p class="lead">Order #{{ $order->id }} was placed on <strong>{{ substr($order->created_at, 0, 10)}}</strong> and is currently <strong>Being prepared</strong>.</p>
         <p class="lead text-muted">If you have any questions, please feel free to <a href="contact.html">contact us</a>, our customer service center is working for you 24/7.</p>
 
         <div class="box">
@@ -27,17 +27,16 @@
                         </tr>
                     </thead>
                     <tbody>
-                    @foreach($orders as $row)
-                        <tr>
-                            <td>
-                                <a href="#">{{$row->name}}</a>
-                            </td>
-                            <td>{{ $row->qty}} </td>
-                            <td>{{ $row->price }}</td>
-                            <td>$0.00</td>
-                            <td>$246.00</td>
-                        </tr>
-                    @endforeach
+                        @foreach($cart[0] as $row)
+
+                            <tr>
+                                <th>product</th>
+                                <th>Quantity</th>
+                                <th>Unit price</th>
+                                <th>Discount</th>
+                                <th>Total</th>
+                            </tr> 
+                        @endforeach                       
                     </tbody>
                     <tfoot>
                         <tr>
@@ -63,24 +62,16 @@
             <!-- /.table-responsive -->
 
             <div class="row addresses">
-                <div class="col-sm-6">
+                <div class="col-sm-6 pull-right">
                     <h3 class="text-uppercase">Invoice address</h3>
-                    <p>John Brown
-                        <br>13/25 New Avenue
-                        <br>New Heaven
-                        <br>45Y 73J
-                        <br>England
-                        <br>Great Britain</p>
+                    <p>{{ $order->fullname }}
+                        <br>{{ $order->state or 'no state'}}
+                        <br>{{$order->city or 'no city'}}
+                        <br>{{ $order->street or 'no street'}}
+                        <br>{{ $order->country or 'no country'}}
+                    </p>
                 </div>
-                <div class="col-sm-6">
-                    <h3 class="text-uppercase">Shipping address</h3>
-                    <p>John Brown
-                        <br>13/25 New Avenue
-                        <br>New Heaven
-                        <br>45Y 73J
-                        <br>England
-                        <br>Great Britain</p>
-                </div>
+                
             </div>
             <!-- /.addresses -->
 
