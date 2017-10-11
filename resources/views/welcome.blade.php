@@ -82,7 +82,7 @@
                         <h3 class="text-uppercase">Do you want to try our products?</h3>
                         <p class="lead">We have distibutors and resellers accross and outside Nigeria</p>
                         <p class="text-center">
-                            <a href="#" class="btn btn-template-transparent-black btn-lg">Check for nearby seller</a>
+                            <a href='{{ url("distributors") }}' class="btn btn-template-transparent-black btn-lg">Check for nearby seller</a>
                         </p>
                     </div>
 
