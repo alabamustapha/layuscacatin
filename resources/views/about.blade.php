@@ -172,12 +172,6 @@ In view of the manufacturing nature of the business which involves the transform
                                 </div>
                                 <h3>Yusuf Olatunji</h3>
                                 <p class="role">Chief Executive Officer</p>
-                                <div class="social">
-                                    <a href="#" class="external facebook" data-animate-hover="pulse"><i class="fa fa-facebook"></i></a>
-                                    <a href="#" class="external gplus" data-animate-hover="pulse"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#" class="external twitter" data-animate-hover="pulse"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" class="email" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
-                                </div>
                                 
                             </div>
                             <!-- /.team-member -->
@@ -185,34 +179,21 @@ In view of the manufacturing nature of the business which involves the transform
                         <div class="col-md-3 col-sm-3" data-animate="fadeInUp">
                             <div class="team-member">
                                 <div class="image">
-                                    <img src="img/portfolio-6.jpg" alt="" class="img-responsive img-circle">
+                                    <img src="img/officer3.jpg" alt="" class="img-responsive img-circle">
                                 </div>
                                 <h3>Operation manager</h3>
                                 <p class="role">Operation manager</p>
-
-                                <div class="social">
-                                    <a href="#" class="external facebook" data-animate-hover="pulse"><i class="fa fa-facebook"></i></a>
-                                    <a href="#" class="external gplus" data-animate-hover="pulse"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#" class="external twitter" data-animate-hover="pulse"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" class="email" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
-                                </div>
-                                
                             </div>
                             <!-- /.team-member -->
                         </div>
                         <div class="col-md-3 col-sm-3" data-animate="fadeInUp">
                             <div class="team-member">
                                 <div class="image">
-                                    <img src="img/portfolio-6.jpg" alt="" class="img-responsive img-circle">
+                                    <img src="img/officer2.jpg" alt="" class="img-responsive img-circle">
                                 </div>
-                                <h3><a href="team-member.html">Production manager</a></h3>
+                                <h3>Production</h3>
                                 <p class="role">Production manager</p>
-                                <div class="social">
-                                    <a href="#" class="external facebook" data-animate-hover="pulse"><i class="fa fa-facebook"></i></a>
-                                    <a href="#" class="external gplus" data-animate-hover="pulse"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#" class="external twitter" data-animate-hover="pulse"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" class="email" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
-                                </div>
+                                
                                 
                             </div>
                             <!-- /.team-member -->
@@ -220,16 +201,11 @@ In view of the manufacturing nature of the business which involves the transform
                         <div class="col-md-3 col-sm-3" data-animate="fadeInUp">
                             <div class="team-member">
                                 <div class="image">
-                                    <img src="img/social-media-manager.jpeg" alt="" class="img-responsive img-circle">
+                                    <img src="img/officer1.jpg" alt="" class="img-responsive img-circle">
                                 </div>
-                                <h3><a href="#">Seun Adeleke</a></h3>
-                                <p class="role">Social Media Manager</p>
-                                <div class="social">
-                                    <a href="#" class="external facebook" data-animate-hover="pulse"><i class="fa fa-facebook"></i></a>
-                                    <a href="#" class="external gplus" data-animate-hover="pulse"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#" class="external twitter" data-animate-hover="pulse"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" class="email" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
-                                </div>
+                                <h3>Marketing</h3>
+                                <p class="role">Marketing Manager</p>
+                                
                             </div>
                             <!-- /.team-member -->
                         </div>

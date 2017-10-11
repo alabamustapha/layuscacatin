@@ -6,11 +6,8 @@
     <meta name="robots" content="all,follow">
     <meta name="googlebot" content="index,follow,snippet,archive">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>Layus Investment Company</title>
-
     <meta name="keywords" content="">
-
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
 
     <!-- Bootstrap and Font Awesome css -->
@@ -256,7 +253,7 @@
                                 <div class="col-sm-5">
                                     <h2>Cacatin Herbal Mixture for Women</h2>
                                     <p>
-                                        highly recommend for married woman
+                                        highly recommend for woman
                                     </p>
                                 </div>
 
