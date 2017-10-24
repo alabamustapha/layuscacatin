@@ -49,7 +49,7 @@
                           <tbody>
                             @foreach($distributors as $distributor)
                               <tr>
-                                <td>{{ $distributor->id }}</td>
+                                <td>{{ $loop->iteration }}</td>
                                 <td>{{ $distributor->name }}</td>
                                 <td>{{ $distributor->location }}</td>
                                 <td>{{ $distributor->phone }}</td>

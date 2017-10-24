@@ -45,7 +45,7 @@
                             <div class="row">
 
                                 <div class="col-sm-7 text-center">
-                                    <img class="img-responsive" src="img/soap.jpg" alt="">
+                                    <img class="img-responsive" src="img/soap_single.jpg" alt="">
                                 </div>
 
                                 <div class="col-sm-5">
